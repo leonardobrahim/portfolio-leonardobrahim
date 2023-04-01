@@ -16,3 +16,10 @@ window.onscroll = () => {
         };
     });
 };
+
+let toggle = document.querySelector('.toggle');
+let card = document.querySelector('.card-user');
+        
+toggle.onclick = function(){
+    card.classList.toggle('active');
+}
