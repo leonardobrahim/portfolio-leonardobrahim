@@ -78,10 +78,58 @@ h1 {
     margin-bottom: 20px;
 }
 
-section#home .home-content .info h1 span {
+section#home .home-content .info h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.typing {
+    position: relative;
+}
+
+.typing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: #2196f3;
+    animation: blinkCursor 1s steps(3) infinite;
+}
+
+@keyframes blinkCursor {
+    0%,75% {
+        opacity: 1;
+    }
+    76%,100% {
+        opacity: 0;
+    }
+}
+
+.typing h2 {
+    font-family: consolas;
     color: #2196f3;
     text-shadow: #2196f3;
     text-transform: uppercase;
+    margin-left: 8px;
+    position: relative;
+    letter-spacing: 5px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    animation: typing 4s steps(8) infinite;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    0%,90%,100% {
+        width: 0;
+    }
+    30%,60% {
+        width: 166.69px;
+    }
 }
 
 section#home .home-content .info .download-btn {
